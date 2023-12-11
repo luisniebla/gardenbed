@@ -13,15 +13,18 @@
   --qwik-dark-purple: #713fc2;
   --qwik-dirty-black: #1d2033;
 
-  --text-color: #ffffff;
-  --main-background: #1c224a;
+  --text-color: rgb(0,0,0);
+  --main-background: rgb(251, 248, 242);
   --header-background: var(--main-background);
   --footer-background: #0d0c25;
+
+  --text-secondary-color: rgb(228, 185, 190);
 }
 
 /* SHELL ---------------------------------------- */
 html {
   font-family:
+    "Fraunces", serfi,
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -113,7 +116,7 @@ ul {
   padding-left: 20px;
 }
 
-/* Custom Builder CSS Class ----------------------------------------- 
+/* Custom Builder CSS Class -----------------------------------------
   This is just an example of setting a custom CSS class on a Builder component,
   then applying styles to it here in the global CSS file.
 */
@@ -159,4 +162,17 @@ html {
 body {
   padding: 0;
   line-height: inherit;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .header li {
+    display: inline-block;
+  }
+  .hamburger {
+    display: block;
+  }
 }

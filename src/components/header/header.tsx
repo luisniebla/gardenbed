@@ -1,43 +1,97 @@
-import { component$ } from "@builder.io/qwik";
-import { QwikLogo } from "../icons/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./header.module.css";
+import Image from '../../../public/logo.jpeg?jsx';
+
 
 export default component$(() => {
+  const isOpen = useSignal(false)
+  console.log(isOpen)
   return (
     <header class={styles.header}>
       <div class={styles.wrapper}>
         <div class={styles.logo}>
-          <a href="/" title="qwik">
-            <QwikLogo height={50} width={143} />
-          </a>
+          <Image  />
         </div>
-        <ul>
+        <ul class={styles.navigation}>
           <li>
             <a
-              href="https://qwik.builder.io/docs/components/overview/"
-              target="_blank"
+              href="/"
+              target="_self"
             >
-              Docs
+              Home
             </a>
           </li>
           <li>
             <a
-              href="https://qwik.builder.io/examples/introduction/hello-world/"
-              target="_blank"
+              href="/about"
+              target="_self"
             >
-              Examples
+              About
             </a>
           </li>
           <li>
             <a
-              href="https://qwik.builder.io/tutorial/welcome/overview/"
-              target="_blank"
+              href="/blog"
+              target="_self"
             >
-              Tutorials
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.etsy.com/shop/tinybiotics/?etsrc=sdt"
+              target="_target"
+            >
+              Shop
             </a>
           </li>
         </ul>
+        <div  class='hamburger' onClick$={() => {
+          isOpen.value = !isOpen.value
+        }}>
+          <div class={styles.bar}></div>
+          <div class={styles.bar}></div>
+          <div class={styles.bar}></div>
+        </div>
       </div>
+      {isOpen.value && (
+        <div class={styles.overlay}>
+          <div>X</div>
+          <li>
+            <a
+              href="/"
+              target="_self"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/about"
+              target="_self"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="/blog"
+              target="_self"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.etsy.com/shop/tinybiotics/?etsrc=sdt"
+              target="_target"
+            >
+              Shop
+            </a>
+          </li>
+        </div>
+      )}
+
     </header>
   );
 });
