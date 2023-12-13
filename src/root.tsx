@@ -23,8 +23,9 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
         <ServiceWorkerRegister />
+        <link href="/dist/output.css" rel="stylesheet"></link>
       </head>
-      <body lang="en">
+      <body lang="en" class='min-w-full'>
         <RouterOutlet />
       </body>
     </QwikCityProvider>
