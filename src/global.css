@@ -37,5 +37,8 @@ html {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
-  background: var(--footer-background);
+  background: rgb(251, 248, 242);
+  pointer-events: none;
+  user-select: none;
+  touch-action: pan-y;
 }

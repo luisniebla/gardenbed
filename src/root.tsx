@@ -24,8 +24,9 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
         <link href="/dist/output.css" rel="stylesheet"></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </head>
-      <body lang="en" class='min-w-full'>
+      <body lang="en" >
         <RouterOutlet />
       </body>
     </QwikCityProvider>
